@@ -49,7 +49,7 @@ class ProjectList {
         const clone = document.importNode(this.template.content, true);
         this.element = clone.firstElementChild;
         this.element.id = `${this.type}-projects`;
-        this.attach();
+        this.attachToDOM();
         this.renderContent();
     }
     renderContent() {
@@ -58,7 +58,7 @@ class ProjectList {
         this.element.querySelector("h2").textContent =
             this.type.toUpperCase() + " PROJECTS";
     }
-    attach() {
+    attachToDOM() {
         this.hostElement.insertAdjacentElement("beforeend", this.element);
     }
 }
@@ -73,9 +73,9 @@ class ProjectInput {
         this.descriptionInputElement = this.element.querySelector("#description");
         this.peopleInputElement = this.element.querySelector("#people");
         this.configure();
-        this.attach();
+        this.attachToDOM();
     }
-    attach() {
+    attachToDOM() {
         this.hostElement.insertAdjacentElement("afterbegin", this.element);
     }
     gatheruserInput() {

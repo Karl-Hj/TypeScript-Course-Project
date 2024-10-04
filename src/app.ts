@@ -69,7 +69,7 @@ class ProjectList {
     const clone = document.importNode(this.template.content, true);
     this.element = clone.firstElementChild as HTMLElement;
     this.element.id = `${this.type}-projects`;
-    this.attach();
+    this.attachToDOM();
     this.renderContent();
   }
 
@@ -80,7 +80,7 @@ class ProjectList {
       this.type.toUpperCase() + " PROJECTS";
   }
 
-  private attach() {
+  private attachToDOM() {
     this.hostElement.insertAdjacentElement("beforeend", this.element);
   }
 }
@@ -115,10 +115,10 @@ class ProjectInput {
     ) as HTMLInputElement;
 
     this.configure();
-    this.attach();
+    this.attachToDOM();
   }
 
-  private attach() {
+  private attachToDOM() {
     this.hostElement.insertAdjacentElement("afterbegin", this.element);
   }
 
